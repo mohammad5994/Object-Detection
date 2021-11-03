@@ -8,3 +8,10 @@ There is a one base database in this project with 1000 training images and 100 t
 
 # Learning Phase(Python)
 CNN model have been implemented by tensorflow and keras. Different strategies and architectures was tested such as Kfold and finally the best architecture was selected, according to its results and scores. After running CNN on training data the generated model will be saved and 20 random images are given to the model to see the results. The procedure includes following steps: 1- Executing CNN on training data 2- Giving 20 images as test data to the trained model 3- preprocess each image based on our model for example for the model that is trained by grayscale images the test images should be converted to grayscale and for the model that is trained by blurred images the test images should be blurred by gaussian blur 4- divide each test image to a grid of 32*32 patches with step 16 to get 225 patches and normalize each patches 5- Execute model prediction on each patch and store the generated score and the coordinates of patch if the score is higher than a specified threshold. The threshold can be different for each model. 6- The patch with the highest score is likely contained a banana, So we sort the score of patches. 7- Analyze neighbours of the patches with the highest score and each neighbour that has score higher than a threshold will be added to a list of final patches 8- Analyze the final patches and find the lowest xmin, lowest ymin, highest xmax and highest ymax between them 9- Now we have two points with coordinates of (xmin,ymin) and (xmax,ymax) and we can draw bounding box on each test image. - If the algorithm can not find any patch on a image with score higher than specified threshold then it will return ”no banana” and no bounding box will be drawn on image - There is two threshold, first one for selecting patches and second one for selecting neighbours
+
+# Running Code
+1- Run Preprocess.cpp
+2- SelectTestImages.cpp
+3- Run CNN and save the model
+4- Give test Images of step 2 to the trained model
+5- Run DrawBoundingBox.cpp to draw box
