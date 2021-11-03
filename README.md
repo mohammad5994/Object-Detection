@@ -12,6 +12,6 @@ CNN model have been implemented by tensorflow and keras. Different strategies an
 # Running Code
 1- Run Preprocess.cpp
 2- SelectTestImages.cpp
-3- Run CNN and save the model
+3- Run CNN and save the model(banana_cnn.ipynb)
 4- Give test Images of step 2 to the trained model
 5- Run DrawBoundingBox.cpp to draw box
