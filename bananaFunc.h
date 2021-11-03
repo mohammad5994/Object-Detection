@@ -21,6 +21,9 @@ vector<string> row;
 int WNDX = 32;
 int WNDY = 32;
 
+/*
+Dataset paths
+*/
 string datasetTrainPath("banana-detection/bananas_train/images/");
 string datasetTestPath("banana-detection/bananas_test/images/");
 string datasetFile("banana-detection/bananas_train/label2.txt");
